@@ -1,0 +1,61 @@
+Code
+#include <iostream>
+using namespace std;
+class linear
+{
+    public:
+    
+    int n,i,a[10],j,temp,target,flag;
+    void accept(){
+        cout<<"Enter size of array:";
+        cin>>n;
+        for(i=0;i<n;i++){
+            cout<<"Enter the element:";
+            cin>>a[i];
+        }
+    }
+    void sort(){
+        for(i=0;i<n;i++){
+            for(j=0;j<n-1;j++){
+                if(a[j]>a[j+1]){
+                    temp=a[j];
+                    a[j]=a[j+1];
+                    a[j+1]=temp;
+                    
+                }
+                
+            }
+            
+        }
+    }
+    void search(){
+        cout<<"Enter target element you want to search:";
+        cin>>target;
+        for(i=0;i<n;i++){
+            
+        
+        if(target==a[i]){
+            flag=1;
+            break;
+        }
+        }
+        if(flag==1){
+            cout<<"Target is present at:"<<i<<"Position";
+        }
+        else{
+            cout<<"Element not present";
+        }
+    
+    }
+};
+int main(){
+    linear a1;
+    a1.accept();
+    a1.sort();
+    a1.search();
+    return 0;
+    
+    
+    
+    
+}
